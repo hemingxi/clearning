@@ -5,7 +5,7 @@ int main(int argc, char *argv[]) {
     printf("Hello World\n");
 
 }
-//test
+// test
 
 // need to install code runner extension?
 // https://www.freecodecamp.org/news/how-to-write-and-run-c-cpp-code-on-visual-studio-code/
