@@ -10,6 +10,10 @@ struct Node {
 struct Node* plinked_list;
 
 void Insert(int x, struct Node* p) {
+    
+    //this function is incomplete
+    
+    struct Node* new_node = malloc(sizeof(struct Node));
     struct Node* temp = malloc(sizeof(struct Node));
     
     temp->data = x;
@@ -17,9 +21,13 @@ void Insert(int x, struct Node* p) {
     
     if(plinked_list == NULL){
         plinked_list = temp;
-    } else {
-        plinked_list->next = temp;
+        return;
     }
+    while(!(temp->next == NULL)){
+
+    }
+    plinked_list->next = temp;
+    
 }
 
 void Print(struct Node* p) {
@@ -31,6 +39,7 @@ void Print(struct Node* p) {
 
     while (!(temp == NULL)) {
         printf("%d ", temp->data);
+        temp = temp->next;
     }
     printf("\n");
 }
