@@ -3,9 +3,11 @@
 #include <stdlib.h>
 
 // To do: 
-// clean up current code to remove the unnecessary Node* p input
+// Clean up current code to remove the unnecessary Node* p input
 // Implement insert at beginning code
-// Implement version where the linked list is a local variable
+// Implement version where the linked list is a local variable 
+//      Options: Insert functions should return Node*
+//               Or pass pointer to pointer to the Insert function, and it can return void
 
 
 struct Node {
@@ -38,8 +40,11 @@ void Insert_At_End(int x, struct Node* p) {
     
 }
 
-void Insert_At_Beg(int x, struct Node* p) {
-
+void Insert_At_Beg(int x) {
+    struct Node* temp = malloc(sizeof(struct Node));
+    temp->data = x;
+    temp->next = plinked_list;
+    plinked_list = temp;
 }
 
 void Print(struct Node* p) {
@@ -67,7 +72,8 @@ int main(){
     for(i = 0; i < n; i++){
         printf("Enter the number : ");
         scanf("%d", &x);
-        Insert_At_End(x, plinked_list);
+        //Insert_At_End(x, plinked_list);
+        Insert_At_Beg(x);
         Print(plinked_list);
     }
 }
