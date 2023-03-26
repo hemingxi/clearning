@@ -3,12 +3,16 @@
 #include <stdlib.h>
 
 // To do: 
-// Clean up current code to remove the unnecessary Node* p input
-// Implement insert at beginning code
+// √ Clean up current code to remove the unnecessary Node* p input
+// √ Implement insert at beginning code
 // Implement version where the linked list is a local variable 
 //      Options: Insert functions should return Node*
 //               Or pass pointer to pointer to the Insert function, and it can return void
-
+// Insert node at nth position
+// Delete node at nth position
+// Reverse a linked list iterative
+// Print elements of a linked list in forward ...
+// Reverse a linked list using recursion
 
 struct Node {
     int data;
