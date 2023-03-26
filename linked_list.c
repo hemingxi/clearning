@@ -13,13 +13,9 @@ void Insert(int x, struct Node* p) {
     
     // Create new node and set that as the starting node if linked list is empty.
 
-    struct Node* new_node = malloc(sizeof(struct Node));
-
-    new_node->data = x;
-    new_node->next = NULL;
-    
-    if(plinked_list == NULL){
-        plinked_list = new_node;
+    if (plinked_list == NULL) {
+        plinked_list = malloc(sizeof(struct Node));
+        plinked_list->data = x;
         return;
     }
 
@@ -30,7 +26,8 @@ void Insert(int x, struct Node* p) {
     while(!(temp->next == NULL)){
         temp = temp->next;
     }
-    temp->next = new_node;
+    temp->next = malloc(sizeof(struct Node));
+    (temp->next)->data = x; 
     
 }
 
