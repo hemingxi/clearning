@@ -11,22 +11,26 @@ struct Node* plinked_list;
 
 void Insert(int x, struct Node* p) {
     
-    //this function is incomplete
-    
+    // Create new node and set that as the starting node if linked list is empty.
+
     struct Node* new_node = malloc(sizeof(struct Node));
-    struct Node* temp = malloc(sizeof(struct Node));
-    
-    temp->data = x;
-    temp->next = NULL;
+
+    new_node->data = x;
+    new_node->next = NULL;
     
     if(plinked_list == NULL){
-        plinked_list = temp;
+        plinked_list = new_node;
         return;
     }
-    while(!(temp->next == NULL)){
 
+    // Otherwise, travserse the linked list until you get to the last node.
+    
+    struct Node* temp = plinked_list;
+    
+    while(!(temp->next == NULL)){
+        temp = temp->next;
     }
-    plinked_list->next = temp;
+    temp->next = new_node;
     
 }
 
