@@ -67,6 +67,30 @@ void Print(struct Node* p) {
     printf("\n");
 }
 
+void Insert_At_Nth(int x, int n) {
+    // this is 0 indexed
+
+    if (n == 0) {
+        Insert_At_Beg(x);
+        return;
+    }
+        
+    // else iterate to the (n-1)th position
+    struct Node* temp = plinked_list;
+
+    for(int i = 0; i < (n-1); i++ ){ // [qn] is this the best way of coding this?
+        temp = temp->next;
+    }
+
+    struct Node* temp2_ref = temp->next;
+    temp->next = malloc(sizeof(struct Node));
+    temp = temp->next;
+    temp->data = x;
+    temp->next = temp2_ref;
+}
+
+#define MIN(X, Y) (((X) < (Y)) ? (X) : (Y)) // apparently this is not good to use
+
 int main(){   
     plinked_list = NULL; 
 
@@ -77,7 +101,8 @@ int main(){
         printf("Enter the number : ");
         scanf("%d", &x);
         //Insert_At_End(x, plinked_list);
-        Insert_At_Beg(x);
+        //Insert_At_Beg(x);
+        Insert_At_Nth(x, MIN(i, 1)); // insert at 0 if empty, else insert at 1st position
         Print(plinked_list);
     }
 }
